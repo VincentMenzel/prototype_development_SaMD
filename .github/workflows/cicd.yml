@@ -15,9 +15,9 @@ on:
 env:
   SHA: $(git rev-parse --short "$GITHUB_SHA")
   dockerhubRepo: vincentmenzel/prototype_development_samd
-  latestImageTag: ${{ env.dockerhubRepo }}:latest
-  shaImageTag: ${{ env.dockerhubRepo }}:${{ env.SHA }}
-  imageURL: registry.hub.docker.com/${{ env.shaImageTag }}
+  latestImageTag: vincentmenzel/prototype_development_samd:latest
+  shaImageTag: vincentmenzel/prototype_development_samd:$(git rev-parse --short "$GITHUB_SHA")
+  imageURL: registry.hub.docker.com/vincentmenzel/prototype_development_samd:$(git rev-parse --short "$GITHUB_SHA")
   tag: ${GITHUB_REF#refs/*/}
 
 jobs:
