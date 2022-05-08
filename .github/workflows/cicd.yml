@@ -125,4 +125,6 @@ jobs:
 
       - name: Deploy to App Engine
         id: deploy
-        run: gcloud app deploy --image-url=${{ env.shaImageTag }}
+        uses: 'google-github-actions/deploy-appengine@v0'
+        with:
+          image_url: ${{ env.shaImageTag }}
