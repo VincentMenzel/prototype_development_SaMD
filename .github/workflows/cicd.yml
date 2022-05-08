@@ -69,6 +69,8 @@ jobs:
       - name: Test e2e
         run: npm run test:e2e
 
+      - name: Test mutations
+        run: npm run test:mutation
 
   build:
     name: Build and Push Docker Image
