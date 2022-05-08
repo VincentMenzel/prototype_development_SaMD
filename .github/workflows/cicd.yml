@@ -16,7 +16,7 @@ env:
   dockerhubRepo: vincentmenzel/prototype_development_samd
   latestImageTag: vincentmenzel/prototype_development_samd:latest
   shaImageTag: vincentmenzel/prototype_development_samd:${{ github.sha }}
-  imageURL: registry.hub.docker.com/vincentmenzel/prototype_development_samd:${{ github.sha }}
+  imageURL: docker.io/vincentmenzel/prototype_development_samd:${{ github.sha }}
   tag: ${GITHUB_REF#refs/*/}
 
 jobs:
