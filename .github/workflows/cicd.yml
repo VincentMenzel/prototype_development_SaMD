@@ -12,39 +12,18 @@ on:
     branches:
       - main
 
+env:
+  dockerhubRepo: vincentmenzel/prototype_development_samd
+  latestImageTag: vincentmenzel/prototype_development_samd:latest
+  shaImageTag: vincentmenzel/prototype_development_samd:${{ github.sha }}
+  imageURL: registry.hub.docker.com/vincentmenzel/prototype_development_samd:${{ github.sha }}
+  tag: ${GITHUB_REF#refs/*/}
+
 jobs:
-
-  setup:
-    name: Setup Environment
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Set SHA
-        run: echo "SHA=$(git rev-parse --short "$GITHUB_SHA")" >> $GITHUB_ENV
-
-      - name: Set dockerhubRepo
-        run: echo "dockerhubRepo=vincentmenzel/prototype_development_samd" >> $GITHUB_ENV
-
-      - name: Set latestImageTag
-        run: echo "latestImageTag=${{ env.dockerhubRepo }}:latest" >> $GITHUB_ENV
-
-      - name: Set shaImageTag
-        run: echo "shaImageTag=${{ env.dockerhubRepo }}:${{ env.SHA }}" >> $GITHUB_ENV
-
-      - name: Set imageURL
-        run: echo "imageURL=registry.hub.docker.com/${{ env.shaImageTag }}" >> $GITHUB_ENV
-
-      - name: Set tag
-        run: echo "tag=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
-
-      - name: Test
-        run: echo $imageURL
 
   validate:
     name: Validate
     runs-on: ubuntu-latest
-    needs: [ setup ]
 
     steps:
       - name: Checkout
@@ -75,7 +54,7 @@ jobs:
 
 
   build:
-    name: Build and Push Image
+    name: Build
     runs-on: ubuntu-latest
 
     needs: [ validate ]
