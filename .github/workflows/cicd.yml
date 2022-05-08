@@ -90,7 +90,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: ${{ latestImageTag }},${{ shaImageTag }}
+          tags: ${{ env.latestImageTag }},${{ env.shaImageTag }}
 
 
   deploy:
@@ -112,7 +112,7 @@ jobs:
 
       - name: Deploy to App Engine
         id: deploy
-        run: gcloud app deploy --image-url=${{ imageURL }}
+        run: gcloud app deploy --image-url=${{ env.imageURL }}
 
       - name: View URL
         run: curl "${{ steps.deploy.outputs.url }}"
