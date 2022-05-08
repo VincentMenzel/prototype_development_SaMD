@@ -14,8 +14,8 @@ on:
 
 env:
   dockerhubRepo: europe-west3-docker.pkg.dev/prototype-development-samd/prototype-development-samd
-  latestImageTag: europe-west3-docker.pkg.dev/prototype-development-samd/prototype-development-samd:latest
-  shaImageTag: europe-west3-docker.pkg.dev/prototype-development-samd/prototype-development-samd:${{ github.sha }}
+  latestImageTag: europe-west3-docker.pkg.dev/prototype-development-samd/prototype-development-samd/latest
+  shaImageTag: europe-west3-docker.pkg.dev/prototype-development-samd/prototype-development-samd/${{ github.sha }}
   tag: ${GITHUB_REF#refs/*/}
 
 jobs:
