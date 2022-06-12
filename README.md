@@ -2,6 +2,9 @@
 <p align="center">
   <img src="https://api.codiga.io/project/33286/score/svg">
   <img src="https://api.codiga.io/project/33286/status/svg">
+  
+  [![Mutation testing badge](https://img.shields.io/endpoint?style=plastic&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2FVincentMenzel%2Fprototype_development_SaMD%2Fmain)](https://dashboard.stryker-mutator.io/reports/github.com/VincentMenzel/prototype_development_SaMD/main)
+  
 </p>
 
 <p align="center">
