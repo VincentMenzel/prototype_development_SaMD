@@ -71,6 +71,8 @@ jobs:
 
       - name: Test mutations
         run: npm run test:mutation
+        env:
+          STRYKER_DASHBOARD_API_KEYL: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
 
   build:
     name: Build and Push Docker Image
